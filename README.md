@@ -2,7 +2,8 @@
 Spring Boot CRUD operations using Spring Data JPA 
 
 In this project I have implemented and tested the class diagram below.
- ![Diagram.png](https://github.com/MeresaG/Spring-Data-Jpa/blob/main/src/main/resources/Diagram.png)
+ 
+![Diagram.png](https://github.com/MeresaG/Spring-Data-Jpa/blob/main/src/main/resources/Diagram.png)
 
 And I have learned the following:-
 - What is Spring Data JPA
