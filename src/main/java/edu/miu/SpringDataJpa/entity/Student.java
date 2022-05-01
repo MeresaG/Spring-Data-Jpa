@@ -1,9 +1,6 @@
 package edu.miu.SpringDataJpa.entity;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,6 +11,7 @@ import javax.persistence.Id;
 @Data
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 @NoArgsConstructor
+@Builder
 public class Student {
     @Id
     @GeneratedValue
@@ -26,4 +24,11 @@ public class Student {
     private String email;
     @Column(name = "age", nullable = false, columnDefinition ="TEXT")
     private int age;
+
+    @Column(name = "guardian_name", columnDefinition ="TEXT", nullable = false)
+    private String guardianName;
+    @Column(name = "guardian_email", columnDefinition ="TEXT", nullable = false)
+    private String guardianEmail;
+    @Column(name = "guardian_mobile", columnDefinition ="TEXT", nullable = false)
+    private String guardianMobile;
 }
