@@ -29,20 +29,39 @@ class StudentRepoTest {
     public void saveStudentWithGuardian() {
 
         Guardian guardian = Guardian.builder()
-                .email("yemane@miu.edu")
-                .name("yemane")
+                .email("aregawi@miu.edu")
+                .name("aregawi")
                 .mobile("+251914854819")
                 .build();
 
-        Student student = Student.builder().firstName("Meresa")
-                .lastName("Gebrewahd")
-                .email("dekiadey@gmail.com")
-                .age(30)
+        Student student = Student.builder().firstName("heran")
+                .lastName("aregawi")
+                .email("heru@gmail.com")
+                .age(25)
                 .guardian(guardian)
                 .build();
         studentRepo.save(student);
     }
 
+    @Test
+    public void findByFirstName() {
+        System.out.println(studentRepo.findByFirstName("heran"));
+    }
+
+    @Test
+    public void findByGuardianName() {
+        System.out.println(studentRepo.findByGuardianNameContaining("man"));
+    }
+
+    @Test
+    public void findByEmail() {
+        System.out.println(studentRepo.getStudentByEmail("heru@gmail.com"));
+    }
+
+    @Test
+    public void findFirstNameByEmail() {
+        System.out.println(studentRepo.getStudentFirstNameByEmail("heru@gmail.com"));
+    }
     @Test
     public void printAllStudent() {
         System.out.println(studentRepo.findAll());
