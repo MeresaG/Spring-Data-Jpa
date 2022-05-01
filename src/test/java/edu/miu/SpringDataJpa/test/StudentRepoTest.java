@@ -1,5 +1,6 @@
 package edu.miu.SpringDataJpa.test;
 
+import edu.miu.SpringDataJpa.entity.Guardian;
 import edu.miu.SpringDataJpa.entity.Student;
 import edu.miu.SpringDataJpa.repository.StudentRepo;
 import org.junit.jupiter.api.Test;
@@ -18,9 +19,27 @@ class StudentRepoTest {
     public void saveStudent() {
         Student student = Student.builder().firstName("Meresa")
                 .lastName("Gebrewahd").email("meresa27@gmail.com")
-                .age(29).guardianEmail("yemane@miu.edu")
-                .guardianName("yemane")
-                .guardianMobile("+251914854819").build();
+                .age(29)
+
+                .build();
+        studentRepo.save(student);
+    }
+
+    @Test
+    public void saveStudentWithGuardian() {
+
+        Guardian guardian = Guardian.builder()
+                .email("yemane@miu.edu")
+                .name("yemane")
+                .mobile("+251914854819")
+                .build();
+
+        Student student = Student.builder().firstName("Meresa")
+                .lastName("Gebrewahd")
+                .email("dekiadey@gmail.com")
+                .age(30)
+                .guardian(guardian)
+                .build();
         studentRepo.save(student);
     }
 

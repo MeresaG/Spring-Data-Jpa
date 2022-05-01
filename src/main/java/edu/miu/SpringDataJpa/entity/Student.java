@@ -2,10 +2,7 @@ package edu.miu.SpringDataJpa.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -25,10 +22,8 @@ public class Student {
     @Column(name = "age", nullable = false, columnDefinition ="TEXT")
     private int age;
 
-    @Column(name = "guardian_name", columnDefinition ="TEXT", nullable = false)
-    private String guardianName;
-    @Column(name = "guardian_email", columnDefinition ="TEXT", nullable = false)
-    private String guardianEmail;
-    @Column(name = "guardian_mobile", columnDefinition ="TEXT", nullable = false)
-    private String guardianMobile;
+    @Embedded
+    private Guardian guardian;
+
+
 }
