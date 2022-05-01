@@ -23,6 +23,8 @@ public class Course {
     private String title;
     private Integer credit;
 
-    
+    //Bidirectional one to one mapping
+    @OneToOne(mappedBy = "course")
+    private CourseMaterial courseMaterial;
 
 }
